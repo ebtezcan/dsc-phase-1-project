@@ -1,65 +1,127 @@
-# Phase 1 Project
+<img src='images/director_shot.jpeg'>
 
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
+# Microsoft Studios: A New Frontier
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project/master/awesome.gif)
+**Author:** E. Berke Tezcan
+***
 
-Now you will put your new skills to use with a large end-of-Phase project! This project should take 20 to 30 hours to complete.
+## Overview
 
-## Project Overview
+Microsoft decided to create a new movie studio to compete with other companies in the space but they are not familiar with the movie industry or what kinds of movies they should be creating for their studio to be successful. We were given the task to explore box office data in order to help Microsoft conquer this new frontier with at least three actionable findings.
 
-For this project, you will use exploratory data analysis to generate insights for a business stakeholder.
+There are many different factors that go into making a movie "successful". One can argue that the most important metric for a successful movie is the financial return like revenue and profit. There would not be any business case if the movies did not make any money after all... However, we believe that the public reaction to the movie is almost as important as the financial data, especially for a new company entering this space. A movie may return a profit, but if the moviegoers do not like the actual production, this will jeopardize the future success of the studio by hurting their brand, even if the movies they are making may be better in the future. For sustained growth, we believe that providing high quality productions liked by the masses that are profitable is the way forward. Therefore, we set parameters on the data to make sure we were looking at the common traits of successful movies. For more information please refer to the Data Understanding & Preparation section.
 
-### Business Problem
+Throughout the analysis we looked at the importance of what genre a movie is, how the production budget may affect the financial success and popularity of the movie, as well as whether there was an optimal time to release a movie to capitalize on.
 
-Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies. You are charged with exploring what types of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
+## Data Understanding & Preparation
 
-### The Data
+For our data analysis we explored data from the largest movie databases online. These were namely: Box Office Mojo, IMDb, TMDb, The Numbers (TN) and Rotten Tomatoes. In order to pick which datasets we were going to use, we had to perform an exploratory data analysis (EDA) first. Our EDA began with comparing and contrasting the datasets that were provided to ensure that we kept as many data points as possible after the datasets were filtered and merged. This analysis also allowed us to define one of the aforementioned success parameters for movies by showing us that the median movie rating was 6.5. In the end, our analysis used data from IMDb and TN only since this combination allowed for the highest sample size and the most complete dataframe.
 
-In the folder `zippedData` are movie datasets from:
+According to Wikipedia, "for many movie investors the required rate of return for this 'risky' investment may be 25% or more." Similarly, allaboutindiefilmmaking.com states that the investor expectation may be 10-25% return on top of their initial investment. With all this in mind, we came up with the following metrics: A successful movie should return at least a 25% profit and should have a higher average rating than 6.5 based on the median average rating we observed in our datasets. 
 
-* [Box Office Mojo](https://www.boxofficemojo.com/)
-* [IMDB](https://www.imdb.com/)
-* [Rotten Tomatoes](https://www.rottentomatoes.com/)
-* [TheMovieDB](https://www.themoviedb.org/)
-* [The Numbers](https://www.the-numbers.com/)
+One parameter that we had to also define was what date range we should filter our data by. From our research we found that in 2009, James Cameron's Avatar changed the movie industry setting the path for "modern-day" movies. The technologies they developed and used to make CGI elements look as realistic as possible ended up being adopted by many movies and defining the past decade of the movie industry. Keeping this in mind, and the fact that popular culture changes target audiences every year, we believe that the data from 2009-2019 is the most relevant for Microsoft's business case. Therefore we limited our analysis to the past decade (2009-2019) while keeping 2020 data points out of the equation since 2020 was an outlier year by any measure due to the COVID-19 pandemic.
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind (e.g. struggled with the Phase 1 Code Challenge), we recommend you use only the following data files:
+## Data Modeling
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+A movie's success can be definitely affected by its genre, production budget and its release date. People often look at the genre of a movie before anything else and make a snap decision whether they would like to see it or not. Similarly, a movie's production budget will affect this decision-making process since some movie-goers may want to see movies with higher quality production, better directors and actors etc. compared to indie movies. Lastly, depending on the release month movie-goers may not be able to go to the movies as much due to having to be in school or having to care for their school-aged children during the school year. So for our analysis we decided to take a deeper dive into these three areas to see if there are clear trends that Microsoft may use strategically for their movie creation process.
 
-## Deliverables
+### Question 1: How does release date affect a movie's success?
 
-There are three deliverables for this project:
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+#### Release Month vs. Total Revenue
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+ <img src='images/Rev-Month.png'>
 
-### Key Points
+From this graph we can see that historically, the months of May and June were when the most revenue was generated amongst the successful movies. The black line in this graph represents the median revenue values while the boxplot gives an idea on the spread of the data.
 
-* **Your analysis should yield three concrete business recommendations.** The ultimate purpose of exploratory analysis is not just to learn about the data, but to help an organization perform better. Explicitly relate your findings to business needs by recommending actions that you think the business (Microsoft) should take.
+#### Release Month vs. Total Profit
+ <img src='images/Prof-Month.png'>     
 
-* **Communicating about your work well is extremely important.** Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of Microsoft's new movie studio) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
 
-* **Use plenty of visualizations.** Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
+Similar to the previous graph that shows the release month vs. total revenue, this graph shows a similar trend that suggests the most profitable movies were the ones that were released in May followed closely by June.
 
-## Getting Started
+#### Our Recommendation for Microsoft
 
-Please start by reviewing this assignment, the rubric at the bottom of it, and the "Project Submission & Review" page. If you have any questions, please ask your instructor ASAP.
+Microsoft should strongly consider releasing their movies in the summer months-- preferably in May or if not possible, in June. As the school year comes to an end, these months allow for more movie-goers to enjoy the movies in their local theater and this directly translates into maximizing revenue and profit.
 
-Next, we recommend you check out [the Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and use the MVP template for your project.
+### Question 2: How does the genre of the movie affect its success?
 
-Alternatively, you can fork [the Phase 1 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-1-project), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
+#### Most Produced Movie Genres
+   
+<img src='images/Most-Produced-Genre.png'>
+  
 
-## Project Submission and Review
+As seen above, Drama was by far the most produced genre between 2009 and 2019 followed by Comedy, Action and Adventure.
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+#### Genre vs. Median Revenue
+   
+<img src='images/Rev-Genre.png'>
+    
+Even though our analysis shows that Drama was the highest produced genre in the past decade, this graph shows us that Drama is not the optimal choice for generating revenue. Here we see that Adventure, Fantasy, Sci-Fi and Animation movies tend to generate more revenue compared to the other genres. 
 
-## Summary
+#### Genre vs. Median Profit
+    
+<img src='images/Prof-Genre.png'>
+    
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+Similar to the relationship between genre and revenue, we see that the most profitable genres are Adventure, Fantasy, Animation and Sci-Fi even though they are not the ones most produced.
+
+#### Our Recommendation for Microsoft
+
+As we saw in the past decade, even though Drama was the most produced genre, followed by Comedy, the most profitable and high grossing movies tended to be Adventure, Fantasy, Animation and Sci-Fi movies. This presents a great opportunity for Microsoft. By focusing on these four key genres and incorporating them into their movies, Microsoft can make a great entry into the movie industry, gain popularity and build their brand while also generating the financial returns that they desire.
+
+### Question 3: How does the production budget affect a movie's ratings and financial success?
+
+
+#### Production Budget vs. Average Movie Rating
+    
+<img src='images/Rating-Budget.png'>
+    
+
+As can be seen from the graph above, the successful movies as we defined them (higher than 25% profit and higher than a 6.5 rating) don't show a clear correlation between the production budget and the movie ratings while unsuccessful movies show a relatively higher correlation, but an overall weak one at that. This relationship debunks the assumption that, as more money is spent on the movie, the more it will be liked by cinema fans. The relationship shown suggests that a movie studio does not need to have a high production budget for it to have higher movie ratings.
+
+#### Production Budget vs. Total Revenue
+
+   <img src='images/Rev-Budget.png'>
+
+As seen above, the production budget has more of a direct effect on the revenue generated by the movie. This may be due to factors such as having increased marketing budgets, or being able to show the movie in more countries compared to a lower budget production. The difference between the successful and unsuccessful movies in this relationship is also noteworthy. Even with lower quality productions, the revenue tends to increase with the budget but is ultimately stifled potentially due to the overall quality of the production.
+
+#### Production Budget vs. Total Profit
+    
+<img src='images/Profit-Budget.png'>
+
+The analysis between total profit and production budget shows a positive correlation for successful movies. As the production budget increases, the total profit amount tends to increase as well. For unsuccessful movies though the story is a little different. As the production budget increases, total profit tends to stay flat or even decrease. This is potentially due to the relationship we explored above between total revenue and production budget. Since the revenue numbers are stifled for unsuccessful movies, the higher the budget gets, the harder it is to turn a profit or even breakeven.
+
+#### Our Recommendation for Microsoft
+
+Our analysis showed that, ultimately, production budget affects revenue and profits pretty strongly while the movie ratings by the general public tend to not change with higher budgets. Microsoft should strategically think about the production budget and decide between the riskier approach or the safer approach. If they are okay with taking a riskier approach, then higher production budgets may return stronger numbers; however, if the movie is not successful, the overall production may lose more money.
+Either way, we found that having higher budgets doesn't translate into moviegoers liking the movies more. Therefore, our recommendation would be for Microsoft to build their fanbase prior to producing movies with higher budgets since it is absolutely possible to produce quality movies with lower budgets as can be seen. This will allow for Microsoft Studios to be financially successful and will pave the path for a sustained growth and success.
+
+## Conclusions
+
+Even though the movie industry is a new frontier for Microsoft, it is an exciting industry filled with opportunities. To sum up, our analysis showed the following:
+
+- Movies released in May and June historically performed better compared to other months in terms of revenue and profits.
+- Even though the most produced genre for the past decade was Drama, most revenue and profit was generated by Adventure movies followed closely by Fantasy, Animation and Sci-Fi.
+- The best genre in terms of % ROI was Horror.
+- Higher production budgets don't translate into the public liking those movies more.
+- Higher production budgets generated more revenue and profit for successful movies but unsuccessful movies with higher budgets ended up losing more money overall.
+
+Given more time and information about what kinds of movies Microsoft would like to make, we would have wanted to analyze how much the actors, writers and directors affect the success of the movies and what the optimal cast would look like. It would also be fruitful to analyze the data by generations so that Microsoft's marketing team can optimize their efforts for specific generations depending on the target audience of their movies. Furthermore, analyzing the unsuccessful movies in more depth to find common traits among them for Microsoft to *avoid* would lower the financial risks associated with this industry. Lastly, we would collect more data to improve on the accuracy of these findings.
+
+## Appendix A - The relationship between Genre and % ROI
+
+#### Genre vs. % ROI
+   
+<img src='images/ROI-Genre.png'>
+
+If Microsoft's financial targets are more aligned with return on investment (% ROI) rather than pure revenue or profits, then we recommend they produce Horror movies instead. Our analysis showed that Horror had a higher ROI percentage compared to any other genre as can be seen above. This means that a higher return can be achieved compared to what is spent on the production budget.
+
+## Appendix B - The relationship between Production Budget and % Profit
+
+#### Production Budget vs. Profit %
+    
+<img src='images/PercentProf-Budget.png'>
+
+
+The relationship between % profit and production budget is an interesting one. It seems like as production budget increases the % profit decreases. This is potentially due to the movie having to perform even better than lower costing successful movies to offset the high amount of costs associated with the production. This insight can be valuable for Microsoft if their earnings are reported in terms of % profit to shareholders rather than total values.
