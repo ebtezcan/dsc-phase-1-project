@@ -110,7 +110,7 @@ Even though the movie industry is a new frontier for Microsoft, it is an excitin
 Given more time and information about what kinds of movies Microsoft would like to make, we would have wanted to analyze how much the actors, writers and directors affect the success of the movies and what the optimal cast would look like. It would also be fruitful to analyze the data by generations so that Microsoft's marketing team can optimize their efforts for specific generations depending on the target audience of their movies. Furthermore, analyzing the unsuccessful movies in more depth to find common traits among them for Microsoft to *avoid* would lower the financial risks associated with this industry. Lastly, we would collect more data to improve on the accuracy of these findings.
 
 ## For More Information
-Please review my full analysis in my <a href= 'https://github.com/ebtezcan/dsc-phase-1-project/blob/master/final_notebook.ipynb'>Jupyter Notebook </a>or my presentation. For any additional questions, please contact Berke Tezcan at berketezcan@gmail.com.
+Please review my full analysis in my <a href= 'https://github.com/ebtezcan/dsc-phase-1-project/blob/master/final_notebook.ipynb'>Jupyter Notebook </a>or <a href= 'https://github.com/ebtezcan/dsc-phase-1-project/blob/master/presentation.pdf'> my presentation </a>. For any additional questions, please contact Berke Tezcan at berketezcan@gmail.com.
 
 ### Repository Structure
 ```
